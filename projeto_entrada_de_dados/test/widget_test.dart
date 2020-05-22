@@ -7,15 +7,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:projeto_entrada_de_dados/CampoSlider.dart';
 
 import 'package:projeto_entrada_de_dados/main.dart';
 import 'package:projeto_entrada_de_dados/CampoTexto.dart';
 import 'package:projeto_entrada_de_dados/CheckBox.dart';
-
+import 'package:projeto_entrada_de_dados/RadioButton.dart';
+import 'package:projeto_entrada_de_dados/CampoSwitch.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(ExemploCheckBox());
+    await tester.pumpWidget(CampoSlider());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
