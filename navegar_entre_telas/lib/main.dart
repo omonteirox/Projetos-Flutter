@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:navegar_entre_telas/TelaSecundaria.dart';
 void main(){
   runApp(MaterialApp(
+    initialRoute: "/",
+    routes: {
+        "/secundaria" : (context)=> telaSecundaria(),
+    },
     debugShowCheckedModeBanner: false,
     home: telaMain(),
   ));
@@ -14,7 +18,7 @@ class telaMain extends StatefulWidget {
 class _telaMainState extends State<telaMain> {
   @override 
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       appBar: AppBar(
         title: Text("TELA PRIMARIA"),
         backgroundColor: Colors.orange,
@@ -33,12 +37,7 @@ class _telaMainState extends State<telaMain> {
                 ),
                 padding: EdgeInsets.all(30),
               onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context)=>telaSecundaria()
-                    )
-                   );
+                Navigator.pushNamed(context, "/secundaria");
               }
               )
           ],
