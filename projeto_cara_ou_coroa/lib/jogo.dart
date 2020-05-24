@@ -21,7 +21,7 @@ class _telaJogoState extends State<telaJogo> {
     }
     return Scaffold(
        backgroundColor: Color(0xff61bd86),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
