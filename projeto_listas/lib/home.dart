@@ -31,6 +31,40 @@ class _telaHomeState extends State<telaHome> {
           itemCount: _itens.length,
           itemBuilder: (context, indice){
              return ListTile(
+                onTap:(){
+                    // print("ação ocorrendo NO ONTAP ${indice}");
+                    showDialog(
+                      context: context,
+                      builder: (context){
+                          return AlertDialog(
+                            title: Text(_itens[indice]["title"]),
+                            titlePadding: EdgeInsets.all(10),
+                            content: Text(_itens[indice]["descricao"]),
+                            actions: <Widget>[
+                              
+                              RaisedButton(onPressed: (){
+                                print("fui clicado pelo ${indice}");
+                                Navigator.pop(context);
+                              },
+                              child: Text("Sim"),
+                              
+                              ),
+                               RaisedButton(onPressed: (){
+                                print("fui clicado pelo ${indice}");
+                                Navigator.pop(context);
+                              },
+                              child: Text("Não"),
+                              
+                              )
+                            ],
+                          );
+                      }
+                      );
+
+                } ,
+                // onLongPress: (){
+                //     print("ação ocorrendo NO ONLONGPRESS");
+                // },
                 title: Text(_itens[indice]["title"]),
                 subtitle: Text(_itens[indice]["descricao"]),
              );
